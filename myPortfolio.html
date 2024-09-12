@@ -1,0 +1,288 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Michael Mlungisi Nkomo - Portfolio</title>
+      <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+      <style>
+          body {
+              background-color: #033503;           
+              background-size: cover;
+              background-attachment: fixed;
+          }
+          .desk {
+              background-color: #000, #00ff00;
+              perspective: 1000px;
+              display: flex;  
+              justify-content: center;
+              align-items: center;
+              height: 100vh;
+          }
+          .computer {
+              transform-style: preserve-3d;
+              transition: transform 0.5s;
+              background-image: url('https://wallpapercave.com/wp/wp4615534.jpg');
+              box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+              padding: 20px; 
+              background-size: cover;
+              background-repeat: no-repeat;
+              width: 800px;
+              height: 600px;
+              margin: 50px auto;
+              position: relative;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+          }
+          .screen {
+              background-color: #000;
+              border-radius: 10px;
+              padding: 20px;
+              color: #00ff00;
+              font-family: 'VT323', monospace;
+              width: 450px;
+              height: 300px;
+              overflow-y: auto;
+              box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+              position: absolute;
+          }
+          .hidden {
+              display: none;
+          }
+          .btn {
+              background-color: #444;
+              color: #00ff00;
+              border: 2px solid #00ff00;
+              border-radius: 5px;
+              padding: 5px 10px;
+              margin: 5px;
+              cursor: pointer;
+              transition: all 0.3s;
+          }
+          .btn:hover {
+              background-color: #00ff00;
+              color: #000;
+          }
+          .nav-btn, .project-btn {
+              font-size: 14px;
+          }
+          #loginBtn {
+              font-size: 16px;
+          }
+          .skill-bar {
+              background-color: #444;
+              height: 20px;
+              border-radius: 10px;
+              margin-bottom: 10px;
+          }
+          .skill-progress {
+              background-color: #00ff00;
+              height: 100%;
+              border-radius: 10px;
+              display: flex;
+              align-items: center;
+              padding-left: 10px;
+              justify-content: space-between;
+              padding-right: 10px;
+          }
+          .skill-name {
+              color: #000;
+              font-weight: bold;
+          }
+          .skill-percentage {
+              color: #000;
+          }
+      </style>
+      <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  </head>
+  <body class="text-green-400">
+      <header class="bg-black p-6 text-center">
+          <h1 class="text-3xl font-bold">Michael Mlungisi Nkomo</h1>
+          <p class="text-lg">Aspiring Data Analyst and Information Security Analyst.</p>
+      </header>
+      <main class="p-6">
+          <div class="desk">
+              <div class="computer">
+                  <div class="screen" id="loginScreen">
+                      <h2 class="text-xl mb-4">Welcome to My Portfolio</h2>
+                      <button id="loginBtn" class="btn">Enter Portfolio</button>
+                  </div>
+                  <div class="screen hidden" id="portfolioScreen">
+                      <div class="page" id="aboutPage">
+                          <h2 class="text-xl mb-4">About Me</h2>
+                          <p>Hello! I'm Michael Mlungisi Nkomo, an aspiring Data Analyst / Information Security Analyst with a passion for turning data into actionable insights. I'm currently pursuing my studies in Data Science and looking forward to making a meaningful impact in the field.</p>
+                      </div>
+                      <div class="page hidden" id="projectsPage">
+                          <h2 class="text-xl mb-4">Projects</h2>
+                          <button class="btn project-btn" data-project="websites">Websites</button>
+                          <button class="btn project-btn" data-project="My_MSU_Library">My_MSU_Library</button>
+                          <button class="btn project-btn" data-project="KedarAI">KedarAI</button>
+                          <button class="btn back-btn" data-page="aboutPage">Back</button>
+                      </div>
+                      <div class="page hidden" id="websites">
+                          <h2 class="text-xl mb-4">Websites</h2>
+                          <p>Here are some of the websites I've developed:</p>
+                          <ul class="list-disc list-inside">
+                              <li>Personal Portfolio</li>
+                              <li>E-commerce Platform</li>
+                              <li>Blog Site</li>
+                          </ul>
+                          <p>You can also check out : </p>
+                          <p>https://kedarcv.co.zw</p>
+                          <p>https://resellme.co.zw</p>
+                          <p>https://linkcellphones.co.zw</p>
+                          <button class="btn back-btn" data-page="projectsPage">Back</button>
+                      </div>
+                      <div class="page hidden" id="My_MSU_Library">
+                          <h2 class="text-xl mb-4">My MSU Library</h2>
+                          <p>My MSU Library is a project I developed to help students easily access and manage library resources. It includes features such as:</p>
+                          <ul class="list-disc list-inside">
+                              <li>Book search and reservation</li>
+                              <li>Digital resource access</li>
+                              <li>Study room booking system</li>
+                              <li>Online user forum</li>
+                          </ul>
+                          <p>You can check out the project on googlePlay.</p>
+                          <button class="btn back-btn" data-page="projectsPage">Back</button>
+                      </div>
+                      <div class="page hidden" id="KedarAI">
+                          <h2 class="text-xl mb-4">KedarAI</h2>
+                          <p>KedarAI is an artificial intelligence project I'm currently working on. It aims to:</p>
+                          <ul class="list-disc list-inside">
+                              <li>Provide personalized learning experiences</li>
+                              <li>Assist in data analysis and visualization</li>
+                              <li>Automate repetitive tasks in data processing</li>
+                          </ul>
+                          <p>It has a voice activated input and response.</p>
+                          <button class="btn back-btn" data-page="projectsPage">Back</button>
+                      </div>
+                      <div class="page hidden" id="achievementsPage">
+                          <h2 class="text-xl mb-4">Achievements</h2>
+                          <ul class="list-disc list-inside">
+                              <li>Dean's List 2023</li>
+                              <li>Best Data Visualization Project Award Midlands 2023</li>
+                              <li>Hackathon Winner - Data for Good Challenge 2023</li>
+                              <li>Top 10 member of NERDIQ MSU</li>
+                          </ul>
+                      </div>
+                      <div class="page hidden" id="educationPage">
+                          <h2 class="text-xl mb-4">Education</h2>
+                          <p>Bachelor of Science in Computer Science</p>
+                          <p>Midlands State University, Expected Graduation: 2024</p>
+                      </div>
+                      <div class="page hidden" id="contactPage">
+                          <h2 class="text-xl mb-4">Contact</h2>
+                          <p>Email: cvlised360@gmail.com </p>
+                          <p>Bizz-Email: kedar@kedarcv.co.zw</p>
+                          <p>Phone: +263719340335</p>
+                          <p>GitHub: https://github.com/Kedarcv/Unofficial_Kedar.jpeg</p>
+                      </div>
+                      <div class="page hidden" id="skillsPage">
+                          <h2 class="text-xl mb-4">Skills</h2>
+                          <div class="skill-bar">
+                              <div class="skill-progress" style="width: 90%;">
+                                  <span class="skill-name">Python</span>
+                                  <span class="skill-percentage">90%</span>
+                              </div>
+                          </div>
+                          <div class="skill-bar">
+                              <div class="skill-progress" style="width: 85%;">
+                                  <span class="skill-name">R</span>
+                                  <span class="skill-percentage">85%</span>
+                              </div>
+                          </div>
+                          <div class="skill-bar">
+                              <div class="skill-progress" style="width: 80%;">
+                                  <span class="skill-name">SQL</span>
+                                  <span class="skill-percentage">80%</span>
+                              </div>
+                          </div>
+                          <div class="skill-bar">
+                              <div class="skill-progress" style="width: 75%;">
+                                  <span class="skill-name">Java</span>
+                                  <span class="skill-percentage">75%</span>
+                              </div>
+                          </div>
+                          <div class="skill-bar">
+                              <div class="skill-progress" style="width: 70%;">
+                                  <span class="skill-name">C++</span>
+                                  <span class="skill-percentage">70%</span>
+                              </div>
+                          </div>
+                          <div class="skill-bar">
+                              <div class="skill-progress" style="width: 65%;">
+                                  <span class="skill-name">JavaScript</span>
+                                  <span class="skill-percentage">65%</span>
+                              </div>
+                          </div>
+                          <div class="skill-bar">
+                              <div class="skill-progress" style="width: 60%;">
+                                  <span class="skill-name">MATLAB</span>
+                                  <span class="skill-percentage">60%</span>
+                              </div>
+                          </div>
+                          <div class="skill-bar">
+                              <div class="skill-progress" style="width: 55%;">
+                                  <span class="skill-name">SAS</span>
+                                  <span class="skill-percentage">55%</span>
+                              </div>
+                          </div>
+                      </div>
+                      <nav class="mt-4 flex flex-wrap justify-center">
+                          <button class="btn nav-btn" data-page="aboutPage">About</button>
+                          <button class="btn nav-btn" data-page="projectsPage">Projects</button>
+                          <button class="btn nav-btn" data-page="achievementsPage">Achievements</button>
+                          <button class="btn nav-btn" data-page="educationPage">Education</button>
+                          <button class="btn nav-btn" data-page="contactPage">Contact</button>
+                          <button class="btn nav-btn" data-page="skillsPage">Skills</button>
+                      </nav>
+                  </div>
+              </div>
+          </div>
+      </main>
+      <footer class="bg-black text-green-400 p-4 text-center">
+          <p>© 2023 Kedarcv-Tech. All rights reserved.</p>
+      </footer>
+      <script>
+          document.addEventListener('DOMContentLoaded', function() {
+              const loginScreen = document.getElementById('loginScreen');
+              const portfolioScreen = document.getElementById('portfolioScreen');
+              const loginBtn = document.getElementById('loginBtn');
+              const pages = document.querySelectorAll('.page');
+              const navBtns = document.querySelectorAll('.nav-btn');
+              const projectBtns = document.querySelectorAll('.project-btn');
+              const backBtns = document.querySelectorAll('.back-btn');
+
+              function showPage(pageId) {
+                  pages.forEach(page => page.classList.add('hidden'));
+                  document.getElementById(pageId).classList.remove('hidden');
+              }
+
+              loginBtn.addEventListener('click', function() {
+                  loginScreen.classList.add('hidden');
+                  portfolioScreen.classList.remove('hidden');
+                  showPage('aboutPage');
+              });
+
+              navBtns.forEach(btn => {
+                  btn.addEventListener('click', function() {
+                      showPage(this.dataset.page);
+                  });
+              });
+
+              projectBtns.forEach(btn => {
+                  btn.addEventListener('click', function() {
+                      showPage(this.dataset.project);
+                  });
+              });
+
+              backBtns.forEach(btn => {
+                  btn.addEventListener('click', function() {
+                      showPage(this.dataset.page);
+                  });
+              });
+          });
+      </script>
+  </body>
+  </html>
